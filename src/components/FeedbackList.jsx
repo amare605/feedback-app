@@ -1,3 +1,5 @@
+import Proptypes from 'prop-types'
+import Feedback from 'react-bootstrap/esm/Feedback'
 import FeedbackItem from "./FeedbackItem"
 
 function FeedbackList({feedback}) {
@@ -14,4 +16,14 @@ function FeedbackList({feedback}) {
   )
 }
 
+
+Feedback.PropType ={
+    feedback : Proptypes.arrayOf(
+        Proptypes.shape({
+            id: Proptypes.number.isRequired,
+            text: Proptypes.string.isRequired,
+            rating: Proptypes.number.isRequired
+        })
+    )
+}
 export default FeedbackList
